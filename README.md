@@ -1,4 +1,4 @@
-# Mandatory Assignment - Web Technologies
+# EXAM - Web Technologies
 
 ## Description
 
