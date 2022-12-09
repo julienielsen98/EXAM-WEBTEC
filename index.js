@@ -7,9 +7,14 @@ const port = process.env.PORT || 8080;
 const app = express();
 const db = new sqlite3.Database(__dirname + "/database.sqlite");
 
+app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(morgan("dev"));
+
+// MAIN ENTRY. Returns frontpage with usage description on /
+router.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
 // CREATEING TABLES
 
@@ -187,7 +192,8 @@ app.get("/premium/recipe/:recipe_id/:step_id_1", (req, res) => {
   db.serialize(() => {
     db.each(
       "SELECT DISTINCT step_id_1, instruction1 FROM free_recipes WHERE recipe_id == ? AND step_id_1 == ?;",
-      recipe_id | step_id_1,
+      recipe_id,
+      step_id_1,
       (err, row) => {
         recipe.push(row);
       },
@@ -227,7 +233,7 @@ app.get("/premium/ingredients", (req, res) => {
 
   db.serialize(() => {
     db.each(
-      "SELECT DISTINCT ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7, ingredient8 FROM freeRecipes;",
+      "SELECT DISTINCT ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7, ingredient8 FROM free_recipes;",
 
       (err, row) => {
         recipe.push(row);

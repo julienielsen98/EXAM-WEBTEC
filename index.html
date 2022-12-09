@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #313d55; font-family: verdana; color: #ffffff">
+    <h1>Recipes API</h1>
+    <p>write "localhost:8080/(an wantent get respons)" in the URL</p>
+    <p>eksample: localhost:8080/recipes</p>
+    <hr />
+    <h2>USAGE USERS:</h2>
+    <br />
+    <h3>GET "/recipes"</h3>
+    <p>Returns data stored in table for users</p>
+
+    <br />
+    <h3>GET "/recipe/:recipe_id"</h3>
+    <p>Returns a chosen recipe by id</p>
+
+    <br />
+    <h3>GET "/recipe/:recipe_id"</h3>
+    <p>
+      Returns a chosen recipe by id. Details about name, category and
+      ingredients.
+    </p>
+
+    <br />
+    <h3>GET "/recipe/:recipe_id/all"</h3>
+    <p>Returns a chosen recipe by id, but with all the details.</p>
+
+    <br />
+    <h3>GET "/recipe/:recipe_id/:step_id_1"</h3>
+    <p>Returns a chosen step by single id. (bug - on step_id_2 and so on...)</p>
+
+    <hr />
+
+    <h2>USAGE PREMIUM USERS:</h2>
+    <br />
+    <h3>GET "/premium/recipes"</h3>
+    <p>Returns data stored in tables for premium user (More recipes options)</p>
+
+    <br />
+    <h3>GET "/premium/recipe/:recipe_id"</h3>
+    <p>
+      Returns a chosen recipe by id. Details about name, category and
+      ingredients.
+    </p>
+
+    <br />
+    <h3>GET "/premium/recipe/:recipe_id/all"</h3>
+    <p>Returns a chosen recipe by id, but with all the details.</p>
+
+    <br />
+    <h3>GET "/premium/recipe/:recipe_id/:step_id_1"</h3>
+    <p>
+      Returns a chosen step by single id. (bug - on get step_id_2 and so on...)
+    </p>
+
+    <br />
+    <h3>GET "/premium/search/:ingredient1"</h3>
+    <p>
+      Returns all the recipes that contains that ingredient (bug - on get
+      ingredient2 and so on...)
+    </p>
+
+    <br />
+    <h3>GET "/premium/ingredients"</h3>
+    <p>Returns all the ingredients that exists in the database</p>
+  </body>
+</html>

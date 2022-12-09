@@ -1,4 +1,4 @@
-# Mandatory Assignment - Web Technologies
+# EXAM - Web Technologies
 
 ## Description
 
@@ -59,10 +59,6 @@ GET "/recipe/:recipe_id" //Returns a chosen recipe by id. Details about name, ca
 
 ```bash
 GET "/recipe/:recipe_id/all" //Returns a chosen recipe by id, but with all the details.
-```
-
-```bash
-GET "/recipe/:recipe_id/:step_id_1" //Returns a chosen step by single id. (bug - could not manage to get step_id_2 and so on...)
 ```
 
 ```bash
@@ -149,7 +145,7 @@ DELETE "/recipe/:recipe_id" //Deletes a chosen recipe
 
 ## Author
 
-Julie Nielsen (@julienielsen98)
+---
 
 ## License
 
